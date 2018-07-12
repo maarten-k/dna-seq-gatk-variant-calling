@@ -38,7 +38,8 @@ rule map_reads:
         index=config["ref"]["genome"],
         extra=get_read_group,
         sort="samtools",
-        sort_order="coordinate"
+        sort_order="coordinate",
+        sort_extra="-l 1"
     threads: 8
     wrapper:
         "0.27.1/bio/bwa/mem"
